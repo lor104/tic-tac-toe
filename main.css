@@ -1,0 +1,11 @@
+div.ttt-box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  float: left;
+  margin: 0;
+}
+
+#top-left, #middle-left, #bottom-left {
+  clear: both;
+}
