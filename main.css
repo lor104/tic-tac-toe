@@ -4,6 +4,10 @@ div.ttt-box {
   border: 2px solid black;
   float: left;
   margin: 0;
+  text-align: center;
+  line-height: 100px;
+  font-size: 4em;
+
 }
 
 #top-left, #middle-left, #bottom-left {
