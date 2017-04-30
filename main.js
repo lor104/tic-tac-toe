@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var count = 0;
-  var oWins = false;
-  var xWins = false;
+  var oWin = false;
+  var xWin = false;
 
   $('div.ttt-box').on('click', function() {
   if (count % 2 === 0 && !$(this).hasClass('o') && !$(this).hasClass('x')  ) {
@@ -13,16 +13,15 @@ $(document).ready(function() {
   }
     count++
     checkWinner();
-    console.log(count);
   });
 
   function xWins() {
     window.alert("X is the winner");
-    xWins = true;
+    xWin = true;
   };
   function oWins() {
     window.alert("O is the winner");
-    oWins = true;
+    oWin = true;
   }
 
   function checkWinner() {
@@ -70,7 +69,7 @@ $(document).ready(function() {
       oWins()
     }
 
-    else if (count === 9 && !(xWins || oWins)) {
+    else if (count === 9 && !(xWin || oWin)) {
       window.alert("Tie game!")
     }
   }
