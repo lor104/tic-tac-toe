@@ -13,3 +13,11 @@ div.ttt-box {
 #top-left, #middle-left, #bottom-left {
   clear: both;
 }
+
+.x {
+  background-color: blue;
+}
+
+.o {
+  background-color: orange;
+}
