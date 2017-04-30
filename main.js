@@ -1,23 +1,28 @@
 $(document).ready(function() {
-  var count = 1;
+  var count = 0;
+  var oWins = false;
+  var xWins = false;
 
   $('div.ttt-box').on('click', function() {
   if (count % 2 === 0 && !$(this).hasClass('o') && !$(this).hasClass('x')  ) {
-    $(this).text("O");
-    $(this).addClass('o');
-  } else if ( !$(this).hasClass('o') && !$(this).hasClass('x') ) {
     $(this).text("X");
     $(this).addClass('x');
+  } else if ( !$(this).hasClass('o') && !$(this).hasClass('x') ) {
+    $(this).text("O");
+    $(this).addClass('o');
   }
     count++
     checkWinner();
+    console.log(count);
   });
 
   function xWins() {
     window.alert("X is the winner");
+    xWins = true;
   };
   function oWins() {
     window.alert("O is the winner");
+    oWins = true;
   }
 
   function checkWinner() {
@@ -41,9 +46,9 @@ $(document).ready(function() {
     }
     else if ($('#top-right').hasClass('x') && $('#middle-middle').hasClass('x') && $('#bottom-left').hasClass('x')) {
       xWins()
-    };
+    }
 
-    if ($('#top-left').hasClass('o') && $('#top-middle').hasClass('o') && $('#top-right').hasClass('o')) {
+    else if ($('#top-left').hasClass('o') && $('#top-middle').hasClass('o') && $('#top-right').hasClass('o')) {
       oWins()
     } else if ($('#middle-left').hasClass('o') && $('#middle-middle').hasClass('o') && $('#middle-right').hasClass('o')) {
       oWins()
@@ -63,7 +68,11 @@ $(document).ready(function() {
     }
     else if ($('#top-right').hasClass('o') && $('#middle-middle').hasClass('o') && $('#bottom-left').hasClass('o')) {
       oWins()
-    };
+    }
+
+    else if (count === 9 && !(xWins || oWins)) {
+      window.alert("Tie game!")
+    }
   }
 
 
