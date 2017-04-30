@@ -2,10 +2,10 @@ $(document).ready(function() {
   var count = 1;
 
   $('div.ttt-box').on('click', function() {
-  if (count % 2 === 0) {
+  if (count % 2 === 0 && !$(this).hasClass('o') && !$(this).hasClass('x')  ) {
     $(this).text("O");
     $(this).addClass('o');
-  } else {
+  } else if ( !$(this).hasClass('o') && !$(this).hasClass('x') ) {
     $(this).text("X");
     $(this).addClass('x');
   }
